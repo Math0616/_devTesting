@@ -1,4 +1,4 @@
-fetch('https://ordinal-maxi-biz-vercel-project.vercel.app/api/omb')
+fetch('https://ordinal-maxi-biz-vercel-project.vercel.app/api/ombcollection')
 	.then(response => response.json())
 	.then(data => {
 		document.getElementById('floorPrice').textContent = data.floorPrice;
