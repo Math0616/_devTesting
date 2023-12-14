@@ -1,4 +1,4 @@
-fetch('https://ordinal-maxi-biz-vercel-project.vercel.app/api/ombcollection')
+fetch('https://ordinalmaxibiz.vercel.app//api/ombcollection')
 	.then(response => response.json())
 	.then(data => {
 		document.getElementById('floorPrice').textContent = data.floorPrice;
@@ -9,7 +9,7 @@ fetch('https://ordinal-maxi-biz-vercel-project.vercel.app/api/ombcollection')
 		console.error('Error fetching data:', error);
 	});
 
-fetch('https://ordinal-maxi-biz-vercel-project.vercel.app/api/theapegang')
+fetch('https://ordinalmaxibiz.vercel.app//api/theapegang')
 	.then(response => response.json())
 	.then(tokens => {
 		tokens.forEach(token => {
