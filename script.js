@@ -9,19 +9,27 @@ fetch('https://ordinalmaxibiz.vercel.app/api/ombcollection')
 		console.error('Error fetching data:', error);
 	});
 
-fetch('https://ordinalmaxibiz.vercel.app/api/theapegang')
-	.then(response => response.json())
-	.then(tokens => {
-		tokens.forEach(token => {
-		console.log(`Token ID: ${token.id}`);
-		if (token.listed) {
-			console.log(`Listed: Yes`);
-			console.log(`Listed Price: ${token.listedPrice}`);
-		} else {
-			console.log(`Listed: No`);
-		}
+document.addEventListener('DOMContentLoaded', function() {
+	fetch('https://ordinalmaxibiz.vercel.app/api/theapegang') // Replace with your actual endpoint
+		.then(response => response.json())
+		.then(tokens => {
+			const container = document.getElementById('token-container');
+			tokens.forEach(token => {
+				const tokenElement = document.createElement('div');
+				tokenElement.classList.add('token');
+
+				// Add token details
+				tokenElement.innerHTML = `
+					<h3>Token ID: ${token.id}</h3>
+					<p>Listed: ${token.listed ? 'Yes' : 'No'}</p>
+					${token.listed ? `<p>Listed Price: ${token.listedPrice}</p>` : ''}
+				`;
+
+				container.appendChild(tokenElement);
+			});
+		})
+		.catch(error => {
+			console.error('Error fetching token data:', error);
 		});
-	})
-	.catch(error => {
-		console.error('Error fetching token data:', error);
-	});
+});
+	
