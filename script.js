@@ -10,8 +10,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     let priceInfo = '';
                     if (token.listed) {
-                        const formattedPrice = `₿${(token.listedPrice / 100000000).toFixed(2)}`;
-                        priceInfo = `<p>Listed Price: ${formattedPrice}</p>`;
+                        // Convert listedPrice to decimal and remove unnecessary trailing zeros
+                        const formattedPrice = (token.listedPrice / 100000000).toString();
+                        priceInfo = `<p>Listed Price: ₿${formattedPrice}</p>`;
                     }
 
                     // Add token details
