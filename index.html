@@ -1,23 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Token List</title>
-    <!-- Add any stylesheets or additional head elements here -->
-</head>
+<html>
 <body>
-	<div>
-		<p>Floor Price: <span id="floorPrice"></span></p>
-		<p>Owners: <span id="owners"></span></p>
-		<p>Total Listed: <span id="totalListed"></span></p>
-	</div>
 
-    <div id="token-container">
-        <!-- Token data will be appended here -->
-    </div>
+<canvas id="myCanvas" width="800" height="600" style="border:1px solid #000000;">
+</canvas>
 
-    <!-- Add your script tag at the end of the body -->
-	<script src="script.js"></script>
+<script>
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+
+// Draw a rectangle
+ctx.fillStyle = "#FF0000";
+ctx.fillRect(100, 100, 200, 100);
+</script>
+
 </body>
 </html>
